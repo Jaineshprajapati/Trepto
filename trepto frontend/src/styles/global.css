@@ -1,0 +1,85 @@
+/* global.css */
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   Design System Tokens — synced from your Figma
+   Colors + Typography
+───────────────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-primary: #f57336;                 /* orange-500 main brand */
+  --color-primary-50:  #fef1eb;
+  --color-primary-100: #fcd4c1;
+  --color-primary-200: #fabfa3;
+  --color-primary-300: #f8a178;
+  --color-primary-400: #f78f5e;
+  --color-primary-500: #f57336;
+  --color-primary-600: #df6931;
+  --color-primary-700: #ae5226;
+  --color-primary-800: #873f1e;
+  --color-primary-900: #673017;
+
+  --color-background: #f7f7f6;              /* grey-500 */
+  --color-surface:    #ffffff;
+  --color-text-primary:   #010101;          /* text-black */
+  --color-text-secondary: #2e2e2e;          /* secondary-text-500 */
+  --color-text-muted:     #2e2e2e;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Semantic aliases */
+  --color-bg:             var(--color-background);
+  --color-accent:         var(--color-primary);
+  --color-text-body:      var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+
+  /* ── Typography ── */
+  /* Font families */
+  --font-sans:    "Poppins", system-ui, -apple-system, sans-serif;
+  --font-heading: "Sora", system-ui, -apple-system, sans-serif;
+  --font-body:    var(--font-sans);
+
+  /* Font weights */
+  --font-weight-normal:    400;
+  --font-weight-medium:    500;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+
+  /* Font sizes – IMPORTANT: using --text- prefix so Tailwind creates text-* classes */
+  --text-h1:       3.5rem;     /* 56px */
+  --text-h2:       1.75rem;    /* 28px */
+  --text-h4:       1.25rem;    /* 20px */
+
+  --text-big-sub:  1.5rem;     /* 24px */
+  --text-sub:      1.25rem;    /* 20px */
+  --text-large:    1.125rem;   /* 18px */
+  --text-medium:   1rem;       /* 16px */
+  --text-small:    0.875rem;   /* 14px */
+  --text-xs:       0.75rem;    /* 12px */
+
+  /* Line heights – you can use leading-* or set per text size if needed */
+  --leading-tight:   1.2;
+  --leading-normal:  1.5;
+
+  /* Letter spacing */
+  --tracking-normal: 0;
+  --tracking-wide-6: 0.06em;   /* 6% */
+
+  /* Radii & spacing (from your earlier pattern) */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+
+  /* Common size aliases (optional) */
+  --text-xs:   var(--text-xs);
+  --text-sm:   var(--text-small);
+  --text-base: var(--text-medium);
+  --text-lg:   var(--text-large);
+}
+
+/* Regular CSS variables (not part of @theme) */
+:root {
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --transition: all 0.2s ease;
+}
