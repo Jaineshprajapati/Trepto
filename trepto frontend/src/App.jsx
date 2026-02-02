@@ -1,13 +1,18 @@
 import React from "react";
-import "./styles/global.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/common/Navbar/Navbar";
+import Home from "./pages/Home/Home";
 
 function App() {
   return (
-    <div className="min-h-screen flex items-center justify-center">
-     <h1 class="text-h1 font-heading font-bold text-primary">
-  This is a 56px Title
-</h1>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/about" element={<About />} /> */}
+        {/* <Route path="/services" element={<Services />} /> */}
+      </Routes>
+    </>
   );
 }
 

@@ -1,0 +1,222 @@
+/* ─────────────────────────────────────────────
+   Navbar Base
+───────────────────────────────────────────── */
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Home – transparent state */
+.navbar-transparent {
+  background: transparent;
+  box-shadow: none;
+}
+
+/* Scrolled / other pages */
+.navbar-solid {
+  background: var(--color-surface);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* ─────────────────────────────────────────────
+   Container
+───────────────────────────────────────────── */
+.navbar-container {
+  width: 1440px;
+  max-width: 100%;
+  height: 80px;
+  padding: 20px 60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ─────────────────────────────────────────────
+   Logo
+───────────────────────────────────────────── */
+.navbar-logo img {
+  width: 96px;
+  height: auto;
+  object-fit: contain;
+}
+
+/* ─────────────────────────────────────────────
+   Desktop Navigation
+───────────────────────────────────────────── */
+.desktop-links {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.nav-link {
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-normal);
+  font-size: var(--text-large);
+  line-height: var(--leading-tight);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease;
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--color-primary);
+}
+
+.nav-link.active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+/* ─────────────────────────────────────────────
+   Contact Button
+───────────────────────────────────────────── */
+.contact-btn {
+  height: 46px;
+  padding: 12px 18px;
+  background: var(--color-primary);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-primary);
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--text-large);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+  transition: all 0.2s ease;
+}
+
+.contact-btn:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+/* ─────────────────────────────────────────────
+   Hamburger
+───────────────────────────────────────────── */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 32px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  background: var(--color-text-primary);
+  border-radius: 2px;
+  transition: all 0.35s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: translateY(8.5px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scale(0.1);
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-9px) rotate(-45deg);
+}
+
+/* ─────────────────────────────────────────────
+   Mobile Menu
+───────────────────────────────────────────── */
+.mobile-menu {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background: var(--color-surface);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  z-index: 999;
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px 40px;
+  gap: 32px;
+}
+
+.mobile-menu .nav-link {
+  font-size: 1.4rem;
+  padding: 8px 0;
+}
+
+.mobile-contact {
+  margin-top: 20px;
+  width: 220px;
+}
+
+/* ─────────────────────────────────────────────
+   Responsive
+───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 20px 40px;
+  }
+
+  .desktop-links,
+  .desktop-cta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 20px 24px;
+    height: 80px;
+  }
+
+  .navbar-logo img {
+    width: 78px;
+    height: 52px;
+  }
+
+  .mobile-menu {
+    top: 80px;
+  }
+}
