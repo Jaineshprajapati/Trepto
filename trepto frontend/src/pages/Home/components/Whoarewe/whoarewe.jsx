@@ -51,20 +51,31 @@ const WhoWeAre = () => {
     <section className="w-full bg-background py-16">
       <div className="mx-auto max-w-[1320px] px-6">
         
-        {/* Heading */}
-        <div className="mx-auto max-w-[941px] text-center mb-14">
-          <h2 className="font-heading text-h1 font-semibold">
-            <span className="text-primary">Who</span> we are
-          </h2>
+      {/* Heading */}
+<div className="mx-auto max-w-[941px] text-center mb-14">
+  <h2
+    className="
+      font-heading font-semibold
+      text-h2 sm:text-h1
+    "
+  >
+    <span className="text-primary">Who</span> we are
+  </h2>
 
-          <p className="text-big-sub text-text-secondary">
-            Turning deep research and data intelligence into disciplined trading
-            decisions.
-          </p>
-        </div>
+  <p
+    className="
+      mt-2
+      text-medium sm:text-big-sub
+      text-text-secondary
+    "
+  >
+    Turning deep research and data intelligence into disciplined trading
+    decisions.
+  </p>
+</div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
           {whoWeAreCards.map(({ img, alt, content, imgFirst, isActive }, idx) => (
             <div
               key={idx}

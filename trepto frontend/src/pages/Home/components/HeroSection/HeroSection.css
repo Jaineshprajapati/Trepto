@@ -44,6 +44,7 @@
   ───────────────────────────────────── */
   @media (max-width: 1024px) {
     .hero {
+      min-height: 50dvh;
       flex-direction: row;
       align-items: flex-start;
       padding-top: 120px;
