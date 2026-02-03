@@ -1,0 +1,35 @@
+.who-card {
+    background-color: var(--color-surface);
+    border: 1px solid #d4d4d4;
+    border-radius: 20px;
+    padding: 30px 22px;
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+
+    /* smooth hover */
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Shadow ONLY on hover */
+  .who-card:hover {
+    box-shadow:
+      2px 5px 12px rgba(0, 0, 0, 0.1),
+      9px 20px 22px rgba(0, 0, 0, 0.09),
+      21px 44px 29px rgba(0, 0, 0, 0.05),
+      37px 78px 35px rgba(0, 0, 0, 0.01),
+      58px 123px 38px rgba(0, 0, 0, 0);
+  }
+  
+  
+  /* If you want ACTIVE card to feel special on hover */
+  .who-card-active:hover {
+    box-shadow:
+      4px 8px 18px rgba(0, 0, 0, 0.12),
+      12px 26px 26px rgba(0, 0, 0, 0.1),
+      26px 50px 34px rgba(0, 0, 0, 0.06),
+      40px 82px 40px rgba(0, 0, 0, 0.02),
+      60px 125px 42px rgba(0, 0, 0, 0);
+  }
+  
