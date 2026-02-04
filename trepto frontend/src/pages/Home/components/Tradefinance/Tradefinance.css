@@ -1,0 +1,59 @@
+/* Floating testimonial card */
+.trade-testimonial {
+    background-color: var(--color-surface);
+    border-radius: 18px;
+    padding: 24px;
+    max-width: 390px;
+  
+    box-shadow:
+      2px 5px 12px rgba(0, 0, 0, 0.1),
+      9px 20px 22px rgba(0, 0, 0, 0.09),
+      21px 44px 29px rgba(0, 0, 0, 0.05),
+      37px 78px 35px rgba(0, 0, 0, 0.01),
+      58px 123px 38px rgba(0, 0, 0, 0);
+  }
+  
+  /* Bullet point */
+  .trade-bullet {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    margin-top: 6px;
+    flex-shrink: 0;
+  }
+  
+  /* ========================= */
+  /* TABLET FIX (CENTER ALIGN) */
+  /* ========================= */
+  @media (max-width: 1024px) {
+    .trade-testimonial {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* ========================= */
+  /* MOBILE FIXES */
+  /* ========================= */
+ /* ---------- MOBILE FIX ---------- */
+@media (max-width: 640px) {
+    .trade-testimonial {
+        max-width: 340px;        /* increase length */
+        padding: 14px 16px;     /* less vertical, more horizontal */
+        border-radius: 14px;
+      }
+
+    .trade-testimonial p {
+      font-size: 10px;
+      line-height: 1.45;
+    }
+  
+    .trade-testimonial img {
+      width: 24px;
+      height: 24px;
+    }
+
+    
+  }
+  
