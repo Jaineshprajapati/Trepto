@@ -1,8 +1,7 @@
 import React from "react";
-import headerBg from "../../../assets/images/titlebar.png"; 
-// ← use your exported PNG here
+import headerBg from "../../../assets/images/titlebar.png";
 
-const NAVBAR_HEIGHT = 80; // px
+const NAVBAR_HEIGHT = 80;
 
 const PageHeader = ({ title }) => {
   return (
@@ -11,11 +10,16 @@ const PageHeader = ({ title }) => {
       style={{
         backgroundImage: `url(${headerBg})`,
         marginTop: `${NAVBAR_HEIGHT}px`,
-        height: `calc(152px)`,
       }}
     >
-      <div className="mx-auto max-w-[1320px] px-6 h-[152px] md:h-[152px] flex items-center justify-center">
-        <h1 className="text-3xl md:text-5xl font-semibold text-white">
+      <div
+        className="
+          mx-auto max-w-[1320px] px-6
+          flex items-center justify-center
+          h-[96px] md:h-[152px]
+        "
+      >
+        <h1 className="font-heading text-2xl md:text-5xl font-semibold text-white">
           {title}
         </h1>
       </div>
