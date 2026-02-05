@@ -1,12 +1,12 @@
-import Navbar from "../../components/common/Navbar/Navbar";
-import Footer from "../../components/common/Footer/Footer";
+
+import PageHeader from "../../components/common/PageHeader/PageHeader";
 import ServicesSection from "./components/Services";
 const Ourservices = () => {
   return (
  <>
-  <Navbar/>
+  <PageHeader title="Our Services" />
   <ServicesSection/>
-  <Footer/>
+  
  </>
   );
 };
