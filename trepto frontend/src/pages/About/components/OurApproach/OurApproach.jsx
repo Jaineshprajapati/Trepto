@@ -50,13 +50,15 @@ function ApproachCard({
         ${numberPosition === "top" ? "pt-20" : ""}
       `}
     >
-      {/* Number SVG */}
-      <NumberImage src={numberImage} position={numberPosition} style={numberImageStyle} />
+      <NumberImage
+        src={numberImage}
+        position={numberPosition}
+        style={numberImageStyle}
+      />
 
-      {/* Content */}
       {contentBottomLeft ? (
-        <div className="absolute left-6 bottom-6 z-10 flex flex-col gap-3 text-left">
-          <h3 className="text-h4 font-semibold font-sans group-hover:text-white">
+        <div className="absolute left-6 bottom-6 z-10 flex flex-col gap-3">
+          <h3 className="text-h4 font-semibold group-hover:text-white">
             {title}
           </h3>
           <p className="text-medium leading-6 text-text-secondary group-hover:text-white">
@@ -65,7 +67,7 @@ function ApproachCard({
         </div>
       ) : (
         <div className="relative z-10 flex flex-col gap-3">
-          <h3 className="text-h4 font-semibold font-sans group-hover:text-white">
+          <h3 className="text-h4 font-semibold group-hover:text-white">
             {title}
           </h3>
           <p className="text-medium leading-6 text-text-secondary group-hover:text-white">
@@ -84,8 +86,7 @@ const approachCards = [
     title: "Deep sector and macro research",
     description:
       "Understanding fundamentals, industry structures, business models and economic drivers.",
-    contentBottomLeft: false,
-    numberImageStyle: { right: 12 }, // Add right margin to image in first card
+    numberImageStyle: { right: 12 },
   },
   {
     numberImage: two,
@@ -101,7 +102,6 @@ const approachCards = [
     title: "Proprietary data systems",
     description:
       "Internal tools, datasets and engineered workflows that strengthen accuracy and speed of insight generation.",
-    contentBottomLeft: false,
   },
   {
     numberImage: four,
@@ -109,7 +109,6 @@ const approachCards = [
     title: "Structured strategic thinking",
     description:
       "Frameworks that convert financial signals into strategic clarity for trading, investing or business decisions.",
-    contentBottomLeft: false,
   },
   {
     numberImage: five,
@@ -127,11 +126,11 @@ function OurApproach() {
       <div className="max-w-[1320px] mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-center font-heading text-[2rem] xs:text-[2.2rem] md:text-[2.6rem] lg:text-h1 leading-tight mb-6 md:mb-14">
+          <h2 className="font-heading text-[2rem] md:text-[2.6rem] lg:text-h1">
             <span className="text-text-primary">OUR </span>
             <span className="text-primary">APPROACH</span>
           </h2>
-          <p className="mt-2 md:mt-4 text-sm md:text-big-sub text-text-secondary">
+          <p className="mt-4 text-text-secondary">
             Our process is built on a multidisciplinary integration of:
           </p>
         </div>
@@ -139,9 +138,18 @@ function OurApproach() {
         {/* Cards */}
         <div className="flex flex-col items-center gap-10">
           {/* Top Row */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {approachCards.slice(0, 3).map((card) => (
-              <ApproachCard key={card.title} {...card} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {approachCards.slice(0, 3).map((card, index) => (
+              <div
+                key={card.title}
+                className={
+                  index === 2
+                    ? "md:col-span-2 md:flex md:justify-center lg:col-span-1"
+                    : ""
+                }
+              >
+                <ApproachCard {...card} />
+              </div>
             ))}
           </div>
 
