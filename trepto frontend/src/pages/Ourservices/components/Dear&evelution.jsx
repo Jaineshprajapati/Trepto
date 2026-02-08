@@ -1,8 +1,8 @@
-import React from "react";
-import cube from "../../../assets/images/Cube.svg";
-import cubeBlack from "../../../assets/images/BlackCube.svg";
+import React from 'react'
+import Triangle from "../../../assets/images/Triangle.svg"
+import BlackTriangle from "../../../assets/images/BlackTriangle.svg"
 
-const Investment = () => {
+const Dealrevelution = () => {
   return (
     <section className="w-full flex justify-center py-10 bg-background">
       {/* Card Container */}
@@ -38,13 +38,14 @@ const Investment = () => {
 >
   {/* ORANGE CUBE (DEFAULT) */}
   <img
-    src={cube}
+    src={Triangle}
     alt=""
     className="
       absolute
       inset-0
       w-full
       h-full
+      
       transition-opacity
       duration-50
       opacity-100
@@ -54,7 +55,7 @@ const Investment = () => {
 
   {/* BLACK CUBE (HOVER) */}
   <img
-    src={cubeBlack}
+    src={BlackTriangle}
     alt=""
     className="
       absolute
@@ -88,7 +89,7 @@ const Investment = () => {
       group-hover:text-white
     "
   >
-    INVESTMENT RESEARCH
+    DEAL EVALUATION & SUPPORT
   </h3>
 
   {/* PARA 1 */}
@@ -105,29 +106,9 @@ const Investment = () => {
       group-hover:text-white
     "
   >
-    Our research capabilities support investors with structured,
-    independent and decision-ready insights.
+    We offer comprehensive analytical support for investors assessing opportunities—ensuring decisions are grounded in evidence, not assumptions.
   </p>
 
-  {/* PARA 2 */}
-  <p
-    className="
-      mb-6
-      font-normal
-      text-small
-      sm:text-medium
-      lg:text-h4
-      text-text-secondary
-      transition-colors
-      duration-50
-      group-hover:text-white
-    "
-  >
-    By combining deep fundamental analysis with quantitative modelling,
-    we help decode business performance and industry behaviour across
-    sectors including Consumer, Renewables, Industrials, Healthcare,
-    Technology & Mobility.
-  </p>
 
   {/* SUB TEXT */}
   <p
@@ -143,17 +124,17 @@ const Investment = () => {
       group-hover:text-white
     "
   >
-    Our research services include:
+    Our deal evaluation support includes:
   </p>
 
   {/* BULLETS */}
   <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-y-3">
     {[
-      "Equity & sector research",
-      "Financial modelling & forecasting",
-      "Competitive benchmarking",
-      "Macro & thematic studies",
-      "Industry structure, value chain & unit economics analysis",
+      "Early-stage opportunity screening",
+      "Business model viability assessment",
+      "Revenue & cost modelling",
+      "Sensitivity & scenario analysis",
+      "Investment committee–ready deal notes and IC decks",
     ].map((item, index) => (
       <div key={index} className="flex items-start gap-3">
         
@@ -192,12 +173,10 @@ const Investment = () => {
       </div>
     ))}
   </div>
-
 </div>
-
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Investment;
+export default Dealrevelution
