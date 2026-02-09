@@ -1,6 +1,9 @@
 import React from "react";
 import PageHeader from "../../components/common/PageHeader/PageHeader";
 import Joinourteam from "./components/JoinOurTeam/JoinOurTeam";
+import Whyjoinus from "./components/WhyJoinUs/Whyjoinus";
+import CurrentOpportunities from "./components/CurrentOpportunities/CurrentOpportunities";
+import ContactSection from "./components/ContactSection/ContactSection";
 // import CommonCTA from "../../components/common/CTA/CommonCTA.jsx";
 // import ctaBg from "../../assets/images/CTA.png";
 
@@ -9,6 +12,9 @@ const Career = () => {
     <>
       <PageHeader title="Career" />
       <Joinourteam />
+      <Whyjoinus />
+      <CurrentOpportunities />
+      <ContactSection />
 
 {/* <CommonCTA
   title="Connect With TRePTO"

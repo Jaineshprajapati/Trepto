@@ -18,28 +18,25 @@ const Joinourteam = () => {
           {/* Left Content (SECOND on mobile/tablet, FIRST on desktop) */}
           <div className="max-w-full lg:max-w-[665px] mt-10 lg:mt-0 order-2 lg:order-1">
             <h2 className="font-heading text-[2rem] xs:text-[2.2rem] md:text-[2.6rem] lg:text-h1 leading-tight mb-6 md:mb-8">
-              <span className="text-text-primary">Why</span>{" "}
-              <span className=" text-primary">Choose Us</span>
+              <span className="text-text-primary">Join Our Team:</span>{" "}
+              <span className=" text-primary">Grow with RH Capital</span>
             </h2>
 
             <p className="text-base md:text-sub font-normal text-text-secondary leading-snug mb-4 md:mb-6">
-              We exist to solve{" "}
-              <span className="font-medium text-text-primary">
-                high impact financial
-              </span>{" "}
-              and{" "}
-              <span className="font-medium text-text-primary">
-                strategic problems
-              </span>
-              {" "}using rigorous analysis, engineered intelligence and institutional
-              grade thinking.
+              Are you passionate about finance, driven by a desire to make a
+              meaningful impact, and eager to be part of a dynamic team at the
+              forefront of the industry? If so, we invite you to embark on an
+              exciting journey with us as we expand our team and welcome
+              talented individuals who share our vision for excellence.
             </p>
 
             <p className="text-base md:text-sub font-normal text-text-secondary leading-snug mb-4 md:mb-6">
-              Whether it is understanding market cycles, constructing
-              proprietary trading strategies, or providing strategic research
-              support to businesses and investors TRePTO stands for depth,
-              precision and dependability.
+              At RH Capital, we're not just offering jobs; we're offering
+              opportunities to shape the future of finance, to drive innovation,
+              and to make a difference in the lives of our clients and
+              communities. As we continue to grow and evolve, we are seeking
+              exceptional individuals who embody our core values of integrity,
+              collaboration, excellence, and inclusivity.
             </p>
           </div>
         </div>
