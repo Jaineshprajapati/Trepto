@@ -21,8 +21,6 @@ const About = () => {
       <OurApproach/>
       <WhatSetsUsApart />
 
-
-
 <CommonCTA
   title="Connect With TRePTO"
   subtitle="Speak with our team about research, trading frameworks, or strategic advisory."

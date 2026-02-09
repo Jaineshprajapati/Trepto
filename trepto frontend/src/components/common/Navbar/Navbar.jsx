@@ -134,11 +134,11 @@ const Navbar = () => {
             About
           </a>
           <a
-            href="#careers"
-            className={`nav-link${pathname === "/" && location.hash === "#careers" ? " active" : ""}`}
-            onClick={handleNav("#careers")}
+            href="/career"
+            className={`nav-link${pathname === "/career" ? " active" : ""}`}
+            onClick={handleNav("/career", true)}
           >
-            Careers
+            Career
           </a>
 
           <button className="contact-btn mobile-contact" onClick={toggleMenu}>
