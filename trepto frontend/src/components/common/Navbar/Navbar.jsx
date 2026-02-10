@@ -32,15 +32,17 @@ const Navbar = () => {
   }, [isHome]);
 
   // Helper to navigate and (for mobile) close menu
-  const handleNav = (to, isRoute = false) => (e) => {
-    e.preventDefault();
-    if (isRoute) {
-      navigate(to);
-    } else {
-      window.location.hash = to;
-    }
-    setIsOpen(false);
-  };
+  const handleNav =
+    (to, isRoute = false) =>
+    (e) => {
+      e.preventDefault();
+      if (isRoute) {
+        navigate(to);
+      } else {
+        window.location.hash = to;
+      }
+      setIsOpen(false);
+    };
 
   // Determine active link
   const isActive = (route, exact = false) => {
@@ -70,12 +72,13 @@ const Navbar = () => {
             Home
           </a>
           <a
-            href="#services"
-            className={`nav-link${pathname === "/" && location.hash === "#services" ? " active" : ""}`}
-            onClick={handleNav("#services")}
+            href="/services"
+            className={`nav-link${pathname === "/services" ? " active" : ""}`}
+            onClick={handleNav("/services", true)}
           >
             Services
           </a>
+
           <a
             href="/about"
             className={`nav-link${pathname === "/about" ? " active" : ""}`}
@@ -120,12 +123,13 @@ const Navbar = () => {
             Home
           </a>
           <a
-            href="#services"
-            className={`nav-link${pathname === "/" && location.hash === "#services" ? " active" : ""}`}
-            onClick={handleNav("#services")}
+            href="/services"
+            className={`nav-link${pathname === "/services" ? " active" : ""}`}
+            onClick={handleNav("/services", true)}
           >
             Services
           </a>
+
           <a
             href="/about"
             className={`nav-link${pathname === "/about" ? " active" : ""}`}

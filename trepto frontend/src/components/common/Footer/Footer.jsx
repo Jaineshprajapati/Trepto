@@ -3,7 +3,7 @@ import logo from "../../../assets/images/footer_treptologo.svg";
 
 const navLinks = [
   { name: "Home", href: "#" },
-  { name: "Services", href: "#" },
+  { name: "Services", href: "" },
   { name: "Work Process", href: "#" },
   { name: "Products", href: "#" },
   { name: "Career", href: "#" },
