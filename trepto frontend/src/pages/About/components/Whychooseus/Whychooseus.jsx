@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImg from "../../../../assets/images/aboutus_img.png";
+import whychooseusimg from "../../../../assets/images/wcu.png"
 
 const Whychooseus = () => {
   return (
@@ -10,7 +10,7 @@ const Whychooseus = () => {
           {/* Right Image (FIRST on mobile/tablet, SECOND on desktop) */}
           <div className="flex justify-center order-1 lg:order-2">
             <img
-              src={aboutImg}
+              src={whychooseusimg}
               alt="About TRePTO"
               className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[400px] lg:max-w-[440px] rounded-lg object-cover"
             />

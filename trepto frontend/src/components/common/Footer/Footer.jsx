@@ -16,8 +16,7 @@ const legalLinks = [
 ];
 
 const socialLinks = [
-  { name: "LinkedIn", href: "#" },
-  { name: "Twitter", href: "#" },
+  { name: "Instagram", href: "https://www.instagram.com/trepto_official/", target: "_blank", rel: "noopener noreferrer" },
 ];
 
 const Footer = () => {

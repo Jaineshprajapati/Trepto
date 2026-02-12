@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImg from "../../../../assets/images/aboutus_img.png";
+import whoweareimg from "../../../../assets/images/wwa.png"
 
 const AboutOne = () => {
   return (
@@ -10,7 +10,7 @@ const AboutOne = () => {
           {/* Left Image */}
           <div className="flex justify-center">
             <img
-              src={aboutImg}
+              src={whoweareimg}
               alt="About TRePTO"
               className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[400px] lg:max-w-[440px] rounded-lg object-cover"
             />

@@ -1,5 +1,5 @@
 import React from "react";
-import aboutImg from "../../../../assets/images/aboutus_img.png";
+import careerimg from "../../../../assets/images/careerimg.png"
 
 const Joinourteam = () => {
   return (
@@ -10,9 +10,9 @@ const Joinourteam = () => {
           {/* Right Image (FIRST on mobile/tablet, SECOND on desktop) */}
           <div className="flex justify-center order-1 lg:order-2">
             <img
-              src={aboutImg}
+              src={careerimg}
               alt="About TRePTO"
-              className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[400px] lg:max-w-[440px] rounded-lg object-cover"
+              className="w-full max-w-[320px] sm:max-w-[380px] md:max-w-[400px] lg:max-w-[520px] rounded-lg object-cover"
             />
           </div>
           {/* Left Content (SECOND on mobile/tablet, FIRST on desktop) */}
