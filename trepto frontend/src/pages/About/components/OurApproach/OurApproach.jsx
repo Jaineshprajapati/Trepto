@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import one from "../../../../assets/icons/1.svg";
 import two from "../../../../assets/icons/2.svg";
@@ -6,21 +6,52 @@ import three from "../../../../assets/icons/3.svg";
 import four from "../../../../assets/icons/4.svg";
 import five from "../../../../assets/icons/5.svg";
 
+/* 👀 Viewport Hook that supports both enter and exit (reverse animation) */
+function useInView(options = { threshold: 0.5 }) {
+  const ref = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      options
+    );
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+    // eslint-disable-next-line
+  }, []);
+
+  return [ref, isVisible];
+}
+
 /* 🔢 Number Image */
-function NumberImage({ src, position = "bottom", style = {} }) {
+function NumberImage({ src, position = "bottom", isVisible, style = {} }) {
+  // SLOW DOWN: Increase transition duration from 700ms to 1400ms
+  const animationClass =
+    position === "bottom"
+      ? isVisible
+        ? "translate-y-0 opacity-100"
+        : "translate-y-10 opacity-0"
+      : isVisible
+      ? "translate-y-0 opacity-100"
+      : "-translate-y-10 opacity-0";
+
   return (
     <img
       src={src}
       alt=""
       className={`
-        pointer-events-none select-none absolute
+        pointer-events-none select-none absolute right-0
         max-w-[80px] w-auto h-auto
-        ${position === "top" ? "top-0 right-0" : "bottom-0 right-0"}
+        transition-all duration-[1400ms] ease-out delay-100
+        ${position === "top" ? "top-0" : "bottom-0"}
+        ${animationClass}
       `}
-      style={{
-        maxWidth: 120,
-        ...style,
-      }}
+      style={{ maxWidth: 120, ...style }}
     />
   );
 }
@@ -34,15 +65,27 @@ function ApproachCard({
   contentBottomLeft = false,
   numberImageStyle = {},
 }) {
+  const [ref, isVisible] = useInView();
+
+  // SLOW DOWN: Increase transition duration from 700ms to 1400ms
+  const textAnimation =
+    numberPosition === "bottom"
+      ? isVisible
+        ? "translate-y-0 opacity-100"
+        : "-translate-y-10 opacity-0"
+      : isVisible
+      ? "translate-y-0 opacity-100"
+      : "translate-y-10 opacity-0";
+
   return (
     <div
+      ref={ref}
       className={`
         relative w-[315px] h-[385px]
         bg-surface border border-border
         rounded-[20px]
         overflow-hidden
-        px-6
-        pt-6
+        px-6 pt-6
         transition-all duration-300 ease-in-out
         hover:bg-primary hover:text-white
         hover:shadow-[2px_5px_12px_rgba(0,0,0,0.1),9px_20px_22px_rgba(0,0,0,0.09),21px_44px_29px_rgba(0,0,0,0.05)]
@@ -53,11 +96,18 @@ function ApproachCard({
       <NumberImage
         src={numberImage}
         position={numberPosition}
+        isVisible={isVisible}
         style={numberImageStyle}
       />
 
       {contentBottomLeft ? (
-        <div className="absolute left-6 bottom-6 z-10 flex flex-col gap-3">
+        <div
+          className={`
+            absolute left-6 bottom-6 z-10 flex flex-col gap-3
+            transition-all duration-[1400ms] ease-out
+            ${textAnimation}
+          `}
+        >
           <h3 className="text-h4 font-semibold group-hover:text-white">
             {title}
           </h3>
@@ -66,7 +116,13 @@ function ApproachCard({
           </p>
         </div>
       ) : (
-        <div className="relative z-10 flex flex-col gap-3">
+        <div
+          className={`
+            relative z-10 flex flex-col gap-3
+            transition-all duration-[1400ms] ease-out
+            ${textAnimation}
+          `}
+        >
           <h3 className="text-h4 font-semibold group-hover:text-white">
             {title}
           </h3>

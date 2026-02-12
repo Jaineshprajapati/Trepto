@@ -25,6 +25,7 @@ const Investment = () => {
           transition-colors
           duration-200
           hover:bg-primary
+          hover:shadow-lg
         "
       >
         {/* BACKGROUND CUBE (DESKTOP ONLY, DECORATIVE) */}

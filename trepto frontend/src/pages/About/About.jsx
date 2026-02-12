@@ -9,26 +9,43 @@ import WhatSetsUsApart from "./components/WhatSetsUsApart/WhatSetsUsApart";
 import CommonCTA from "../../components/common/CTA/CommonCTA.jsx";
 import ctaBg from "../../assets/images/CTA.png";
 
+// Import Reveal animation components
+import Reveal from "../../components/common/Reveal";
+import RevealGroup from "../../components/common/RevealGroup";
+
 const About = () => {
   return (
     <>
       {/* About Page Header */}
       <PageHeader title="About Us" />
-      <AboutOne />
-      <Whychooseus />
-      <OurMission />
-      <OurPhilosophy />
-      <OurApproach/>
-      <WhatSetsUsApart />
+      <RevealGroup as={React.Fragment}>
+        <Reveal direction="up" delay={0.1}>
+          <AboutOne />
+        </Reveal>
+        <Reveal direction="up" delay={0.18}>
+          <Whychooseus />
+        </Reveal>
+        <Reveal direction="up" delay={0.26}>
+          <OurMission />
+        </Reveal>
+        <Reveal direction="up" delay={0.34}>
+          <OurPhilosophy />
+        </Reveal>
 
-<CommonCTA
-  title="Connect With TRePTO"
-  subtitle="Speak with our team about research, trading frameworks, or strategic advisory."
-  buttonText="Contact With Us"
-  backgroundImage={ctaBg}
-  onButtonClick={() => window.location.href = "/contact"}
-/>
+        <OurApproach />
 
+        <Reveal direction="up" delay={0.5}>
+          <WhatSetsUsApart />
+        </Reveal>
+      </RevealGroup>
+
+      <CommonCTA
+        title="Connect With TRePTO"
+        subtitle="Speak with our team about research, trading frameworks, or strategic advisory."
+        buttonText="Contact With Us"
+        backgroundImage={ctaBg}
+        onButtonClick={() => (window.location.href = "/contact")}
+      />
     </>
   );
 };

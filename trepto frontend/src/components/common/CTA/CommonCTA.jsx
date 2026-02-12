@@ -47,7 +47,7 @@ const CommonCTA = ({
               border border-primary
               bg-white
               text-primary
-              text-medium sm:text-big-sub
+              text-medium sm:text-sub
               font-regular
               transition-all duration-200
               hover:bg-transparent
