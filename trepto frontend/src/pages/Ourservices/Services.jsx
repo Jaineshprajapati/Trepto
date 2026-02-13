@@ -38,7 +38,7 @@ const Ourservices = () => {
           subtitle="Speak with our team about research, trading frameworks, or strategic advisory."
           buttonText="Aboout our journey"
           backgroundImage={ctaBg}
-          onButtonClick={() => (window.location.href = "/contact")}
+          onButtonClick={() => (window.location.href = "/about")}
         />
     </>
   );

@@ -25,9 +25,12 @@ const HeroSection = () => {
 
         <Reveal direction="up" delay={0.3}>
           <div className="mt-10 flex gap-4 flex-wrap sm:flex-nowrap">
-            <button className="bg-primary text-white px-6 py-3 rounded-md w-full sm:w-auto">
+            <a
+              href="/about"
+              className="bg-primary text-white px-6 py-3 rounded-md w-full sm:w-auto flex items-center justify-center"
+            >
               Start Trading
-            </button>
+            </a>
             <a
               href="/services"
               className="border border-primary text-primary bg-white px-6 py-3 rounded-md w-full sm:w-auto flex items-center justify-center"

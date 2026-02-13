@@ -1,29 +1,43 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import PageHeader from "../../components/common/PageHeader/PageHeader";
 import Joinourteam from "./components/JoinOurTeam/JoinOurTeam";
 import Whyjoinus from "./components/WhyJoinUs/Whyjoinus";
 import CurrentOpportunities from "./components/CurrentOpportunities/CurrentOpportunities";
 import ContactSection from "./components/ContactSection/ContactSection";
 
-// Assuming you have a Reveal component (such as from Framer Motion or your UI lib)
-import Reveal from "../../components/common/Reveal"; // Adjust the path as necessary
+import Reveal from "../../components/common/Reveal";
 
 const Career = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 300); // delay to allow Reveal animation render
+      }
+    }
+  }, [location]);
+
   return (
     <>
       <PageHeader title="Career" />
+
       <Reveal>
         <Joinourteam />
       </Reveal>
-      <Reveal delay={0.1}>
+
+      <Reveal>
         <Whyjoinus />
       </Reveal>
-      <Reveal delay={0.2}>
-        <CurrentOpportunities />
-      </Reveal>
-      <Reveal delay={0.3}>
-        <ContactSection />
-      </Reveal>
+
+      <CurrentOpportunities />
+
+      <ContactSection />
     </>
   );
 };

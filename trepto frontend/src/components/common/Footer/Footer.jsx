@@ -2,17 +2,16 @@ import React from "react";
 import logo from "../../../assets/images/footer_treptologo.svg";
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "Services", href: "" },
-  { name: "Work Process", href: "#" },
-  { name: "Products", href: "#" },
-  { name: "Career", href: "#" },
+  { name: "Home", href: "/" },
+  { name: "Services", href: "/services" },
+  { name: "About Us", href: "/about" },
+  { name: "Career", href: "/career" },
+  { name: "Contact Us", href: "/career#contact" },
 ];
 
 const legalLinks = [
   { name: "Terms of Use", href: "#" },
   { name: "Privacy Policy", href: "#" },
-  { name: "About Cookies", href: "#" },
 ];
 
 const socialLinks = [

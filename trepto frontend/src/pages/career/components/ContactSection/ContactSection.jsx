@@ -4,9 +4,13 @@ import toast from "react-hot-toast";
 
 const ContactSection = () => {
   const [subject, setSubject] = useState("general");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
+    setIsSubmitting(true);
 
     const form = e.target;
     const formData = new FormData(form);
@@ -14,17 +18,19 @@ const ContactSection = () => {
     const email = formData.get("email");
     const message = formData.get("message");
 
-    // ✅ Email validation
+    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       toast.error("Please enter a valid email address");
+      setIsSubmitting(false);
       return;
     }
 
-    // ✅ Message word limit (300 words)
+    // Message word limit (300 words)
     const wordCount = message.trim().split(/\s+/).length;
     if (wordCount > 300) {
       toast.error("Message cannot exceed 300 words");
+      setIsSubmitting(false);
       return;
     }
 
@@ -45,12 +51,15 @@ const ContactSection = () => {
       }
     } catch (error) {
       toast.error("Network error. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <section className="bg-background pt-10 pb-20 lg:pt-12 lg:pb-24">
+    <section id="contact" className="bg-background pt-10 pb-20 lg:pt-12 lg:pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20">
+        
         {/* LEFT — CONTACT INFO */}
         <div className="bg-surface rounded-2xl p-6 sm:p-8 md:p-10 lg:p-14 flex flex-col justify-center shadow-sm">
           <h2 className="text-h2 sm:text-h2 font-heading text-primary">
@@ -99,15 +108,13 @@ const ContactSection = () => {
         </div>
 
         {/* RIGHT — FORM */}
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-8 sm:space-y-10"
-        >
+        <form onSubmit={handleSubmit} className="space-y-8 sm:space-y-10">
+          
           {/* Web3Forms Hidden Fields */}
           <input
             type="hidden"
             name="access_key"
-            value="062b3a27-33e1-4ec3-8341-281147fbf533"
+            value={import.meta.env.VITE_WEB3FORMS_KEY}
           />
           <input type="hidden" name="from_name" value="Trepto Website" />
           <input
@@ -172,8 +179,8 @@ const ContactSection = () => {
                 className="w-full border-b border-border bg-transparent py-2 focus:outline-none focus:border-primary transition"
                 pattern="^[0-9+\s()-]*$"
                 title="Please enter numbers only. Letters are not allowed."
-                onInput={e => {
-                  e.target.value = e.target.value.replace(/[A-Za-z]/g, '');
+                onInput={(e) => {
+                  e.target.value = e.target.value.replace(/[A-Za-z]/g, "");
                 }}
               />
             </div>
@@ -221,18 +228,6 @@ const ContactSection = () => {
             </div>
           </div>
 
-          {/* Attach file (OPTIONAL) */}
-          <div>
-            <label className="block text-small font-medium text-text-secondary mb-2">
-              Attach File (optional)
-            </label>
-            <input
-              type="file"
-              name="attachment"
-              className="w-full text-small text-text-secondary file:text-small file:border-0 file:bg-primary file:text-white file:px-4 file:py-2 file:rounded-md cursor-pointer"
-            />
-          </div>
-
           {/* Message */}
           <div>
             <label className="block text-small font-medium text-text-secondary mb-2">
@@ -250,9 +245,17 @@ const ContactSection = () => {
           {/* Submit */}
           <button
             type="submit"
-            className="w-full bg-primary text-white rounded-lg py-4 text-medium font-semibold border-2 border-primary transition-all duration-200 hover:bg-white hover:text-primary hover:border-primary"
+            disabled={isSubmitting}
+            className="w-full bg-primary text-white rounded-lg py-4 text-medium font-semibold border-2 border-primary transition-all duration-200 hover:bg-white hover:text-primary hover:border-primary disabled:opacity-70 disabled:cursor-not-allowed"
           >
-            Send Message
+            {isSubmitting ? (
+              <span className="flex items-center justify-center gap-2">
+                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                Sending...
+              </span>
+            ) : (
+              "Send Message"
+            )}
           </button>
         </form>
       </div>

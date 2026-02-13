@@ -97,7 +97,9 @@ const Navbar = () => {
 
         {/* Desktop CTA */}
         <div className="navbar-cta desktop-cta">
-          <button className="contact-btn">Contact Us</button>
+          <a href="/career#contact" className="contact-btn">
+            Contact Us
+          </a>
         </div>
 
         {/* Hamburger */}
