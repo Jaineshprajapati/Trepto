@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import PageHeader from "../../components/common/PageHeader/PageHeader";
 import AboutOne from "./components/Aboutone/Aboutone";
 import Whychooseus from "./components/Whychooseus/Whychooseus";
@@ -9,25 +10,38 @@ import WhatSetsUsApart from "./components/WhatSetsUsApart/WhatSetsUsApart";
 import CommonCTA from "../../components/common/CTA/CommonCTA.jsx";
 import ctaBg from "../../assets/images/CTA.png";
 
-// Import Reveal animation components
 import Reveal from "../../components/common/Reveal";
 import RevealGroup from "../../components/common/RevealGroup";
 
 const About = () => {
+  const navigate = useNavigate();
+
+  const handleContactClick = () => {
+    navigate("/career");
+    setTimeout(() => {
+      const el = document.querySelector("#contact");
+      el?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
   return (
     <>
       {/* About Page Header */}
       <PageHeader title="About Us" />
+
       <RevealGroup as={React.Fragment}>
         <Reveal direction="up" delay={0.1}>
           <AboutOne />
         </Reveal>
+
         <Reveal direction="up" delay={0.18}>
           <Whychooseus />
         </Reveal>
+
         <Reveal direction="up" delay={0.26}>
           <OurMission />
         </Reveal>
+
         <Reveal direction="up" delay={0.34}>
           <OurPhilosophy />
         </Reveal>
@@ -44,7 +58,7 @@ const About = () => {
         subtitle="Speak with our team about research, trading frameworks, or strategic advisory."
         buttonText="Contact With Us"
         backgroundImage={ctaBg}
-        onButtonClick={() => (window.location.href = "/career#contact")}
+        onButtonClick={handleContactClick}
       />
     </>
   );

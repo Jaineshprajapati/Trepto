@@ -1,21 +1,27 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../../assets/images/footer_treptologo.svg";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Services", href: "/services" },
-  { name: "About Us", href: "/about" },
-  { name: "Career", href: "/career" },
-  { name: "Contact Us", href: "/career#contact" },
+  { name: "Home", to: "/" },
+  { name: "Services", to: "/services" },
+  { name: "About Us", to: "/about" },
+  { name: "Career", to: "/career" },
+  { name: "Contact Us", to: "/career#contact" },
 ];
 
 const legalLinks = [
-  { name: "Terms of Use", href: "#" },
-  { name: "Privacy Policy", href: "#" },
+  { name: "Terms of Use", to: "#" },
+  { name: "Privacy Policy", to: "#" },
 ];
 
 const socialLinks = [
-  { name: "Instagram", href: "https://www.instagram.com/trepto_official/", target: "_blank", rel: "noopener noreferrer" },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/trepto_official/",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
 ];
 
 const Footer = () => {
@@ -43,12 +49,12 @@ const Footer = () => {
             <ul className="space-y-3 text-sm">
               {navLinks.map((link) => (
                 <li key={link.name}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.to}
                     className="text-white/80 transition hover:text-orange-500"
                   >
                     {link.name}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -63,7 +69,7 @@ const Footer = () => {
               {legalLinks.map((link) => (
                 <li key={link.name}>
                   <a
-                    href={link.href}
+                    href={link.to}
                     className="text-white/80 transition hover:text-orange-500"
                   >
                     {link.name}
@@ -83,6 +89,8 @@ const Footer = () => {
                 <li key={link.name}>
                   <a
                     href={link.href}
+                    target={link.target}
+                    rel={link.rel}
                     className="text-white/80 transition hover:text-orange-500"
                   >
                     {link.name}

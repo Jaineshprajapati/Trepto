@@ -17,7 +17,7 @@ const Navbar = () => {
   // Scroll detection (HOME PAGE ONLY)
   useEffect(() => {
     if (!isHome) {
-      setIsScrolled(true); // always solid on other pages
+      setIsScrolled(true);
       return;
     }
 
@@ -26,80 +26,74 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // run once on load
+    handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
-  // Helper to navigate and (for mobile) close menu
-  const handleNav =
-    (to, isRoute = false) =>
-    (e) => {
-      e.preventDefault();
-      if (isRoute) {
-        navigate(to);
-      } else {
-        window.location.hash = to;
-      }
-      setIsOpen(false);
-    };
-
-  // Determine active link
-  const isActive = (route, exact = false) => {
-    if (exact) {
-      return pathname === route;
+  // Unified navigation handler
+  const handleNav = (to, hash = null) => {
+    navigate(to);
+    if (hash) {
+      setTimeout(() => {
+        const el = document.querySelector(hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
     }
-    return pathname.startsWith(route);
+    setIsOpen(false);
   };
 
   return (
     <nav
-      className={`navbar ${isHome && !isScrolled ? "navbar-transparent" : "navbar-solid"}`}
+      className={`navbar ${
+        isHome && !isScrolled ? "navbar-transparent" : "navbar-solid"
+      }`}
     >
       <div className="navbar-container">
         {/* Logo */}
-        <div className="navbar-logo" onClick={() => navigate("/")}>
+        <div className="navbar-logo" onClick={() => handleNav("/")}>
           <img src={logo} alt="Trepto Logo" style={{ cursor: "pointer" }} />
         </div>
 
         {/* Desktop Links */}
         <div className="navbar-links desktop-links">
-          <a
-            href="/"
+          <button
             className={`nav-link${isHome ? " active" : ""}`}
-            onClick={handleNav("/", true)}
+            onClick={() => handleNav("/")}
           >
             Home
-          </a>
-          <a
-            href="/services"
+          </button>
+
+          <button
             className={`nav-link${pathname === "/services" ? " active" : ""}`}
-            onClick={handleNav("/services", true)}
+            onClick={() => handleNav("/services")}
           >
             Services
-          </a>
+          </button>
 
-          <a
-            href="/about"
+          <button
             className={`nav-link${pathname === "/about" ? " active" : ""}`}
-            onClick={handleNav("/about", true)}
+            onClick={() => handleNav("/about")}
           >
             About
-          </a>
-          <a
-            href="/career"
+          </button>
+
+          <button
             className={`nav-link${pathname === "/career" ? " active" : ""}`}
-            onClick={handleNav("/career", true)}
+            onClick={() => handleNav("/career")}
           >
             Career
-          </a>
+          </button>
         </div>
 
         {/* Desktop CTA */}
         <div className="navbar-cta desktop-cta">
-          <a href="/career#contact" className="contact-btn">
+          <button
+            className="contact-btn"
+            onClick={() => handleNav("/career", "#contact")}
+          >
             Contact Us
-          </a>
+          </button>
         </div>
 
         {/* Hamburger */}
@@ -117,37 +111,38 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${isOpen ? "open" : ""}`}>
         <div className="mobile-menu-content">
-          <a
-            href="/"
+          <button
             className={`nav-link${isHome ? " active" : ""}`}
-            onClick={handleNav("/", true)}
+            onClick={() => handleNav("/")}
           >
             Home
-          </a>
-          <a
-            href="/services"
+          </button>
+
+          <button
             className={`nav-link${pathname === "/services" ? " active" : ""}`}
-            onClick={handleNav("/services", true)}
+            onClick={() => handleNav("/services")}
           >
             Services
-          </a>
+          </button>
 
-          <a
-            href="/about"
+          <button
             className={`nav-link${pathname === "/about" ? " active" : ""}`}
-            onClick={handleNav("/about", true)}
+            onClick={() => handleNav("/about")}
           >
             About
-          </a>
-          <a
-            href="/career"
+          </button>
+
+          <button
             className={`nav-link${pathname === "/career" ? " active" : ""}`}
-            onClick={handleNav("/career", true)}
+            onClick={() => handleNav("/career")}
           >
             Career
-          </a>
+          </button>
 
-          <button className="contact-btn mobile-contact" onClick={toggleMenu}>
+          <button
+            className="contact-btn mobile-contact"
+            onClick={() => handleNav("/career", "#contact")}
+          >
             Contact Us
           </button>
         </div>

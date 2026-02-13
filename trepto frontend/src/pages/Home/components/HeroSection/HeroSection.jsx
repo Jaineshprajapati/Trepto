@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import heroImage from "../../../../assets/images/hero_image.png";
 import "./HeroSection.css";
 
@@ -7,7 +8,7 @@ import Reveal from "../../../../components/common/Reveal";
 const HeroSection = () => {
   return (
     <section className="hero">
-      
+
       {/* LEFT CONTENT */}
       <div className="hero-content">
         <Reveal direction="up">
@@ -25,18 +26,19 @@ const HeroSection = () => {
 
         <Reveal direction="up" delay={0.3}>
           <div className="mt-10 flex gap-4 flex-wrap sm:flex-nowrap">
-            <a
-              href="/about"
+            <Link
+              to="/about"
               className="bg-primary text-white px-6 py-3 rounded-md w-full sm:w-auto flex items-center justify-center"
             >
               Start Trading
-            </a>
-            <a
-              href="/services"
+            </Link>
+
+            <Link
+              to="/services"
               className="border border-primary text-primary bg-white px-6 py-3 rounded-md w-full sm:w-auto flex items-center justify-center"
             >
               View Strategies
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>
