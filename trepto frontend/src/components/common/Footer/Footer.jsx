@@ -10,22 +10,25 @@ const navLinks = [
 ];
 
 const legalLinks = [
-  { name: "Terms of Use", href: "#" },
-  { name: "Privacy Policy", href: "#" },
+  { name: "Terms of Service", href: "/termsofservices" },
+  { name: "Privacy Policy", href: "/privacypolicy" },
 ];
 
 const socialLinks = [
-  { name: "Instagram", href: "https://www.instagram.com/trepto_official/", target: "_blank", rel: "noopener noreferrer" },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/trepto_official/",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
 ];
 
 const Footer = () => {
   return (
     <footer className="w-full bg-black text-white">
       <div className="mx-auto max-w-[1320px] px-6 py-10">
-
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-
           {/* Brand */}
           <div className="space-y-5">
             <img src={logo} alt="TrePTO Logo" className="w-36" />
@@ -91,7 +94,6 @@ const Footer = () => {
               ))}
             </ul>
           </div>
-
         </div>
 
         {/* Divider */}
@@ -102,7 +104,6 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} TrePTO. All rights reserved.</p>
           <p>Crafted with expertise and dedication.</p>
         </div>
-
       </div>
     </footer>
   );

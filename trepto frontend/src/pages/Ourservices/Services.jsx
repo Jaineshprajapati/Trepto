@@ -10,6 +10,7 @@ import ctaBg from "../../assets/images/CTA.png";
 
 import Reveal from "../../components/common/Reveal";
 import RevealGroup from "../../components/common/RevealGroup";
+import Tradefinanceservices from "./components/Tradefinanceservice.jsx";
 
 const Ourservices = () => {
   return (
@@ -30,6 +31,9 @@ const Ourservices = () => {
         </Reveal>
         <Reveal direction="up" delay={0.42}>
           <Stategicadvisory />
+        </Reveal>
+        <Reveal direction="up" delay={0.50}>
+        <Tradefinanceservices />
         </Reveal>
       </RevealGroup>
       
