@@ -14,6 +14,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicies";
 import AmlPolicy from "./pages/AmlPolicy";
 import Disclaimer from "./pages/Disclaimer";
 import RiskDisclosure from "./pages/RiskDisclosure";
+import HomeContactForm from "./pages/Home/components/HomeContactForm/HomeContactForm";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Route path="/amlpolicy" element={<AmlPolicy />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/riskdisclosure" element={<RiskDisclosure />} />
+        <Route path="/homecontact" element={<HomeContactForm />} />
       </Routes>
 
       <Footer />
