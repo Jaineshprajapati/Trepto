@@ -12,6 +12,9 @@ const navLinks = [
 const legalLinks = [
   { name: "Terms of Service", href: "/termsofservices" },
   { name: "Privacy Policy", href: "/privacypolicy" },
+  { name: "Aml Policy", href: "/amlpolicy" },
+  { name: "Disclaimer", href: "/disclaimer" },
+  { name: "Risk Disclaimer", href: "/riskdisclosure" },
 ];
 
 const socialLinks = [

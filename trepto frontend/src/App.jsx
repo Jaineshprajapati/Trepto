@@ -11,6 +11,9 @@ import Career from "./pages/career/career";
 import ScrollToTop from "./components/common/ScrollToTop";
 import TermsOfService from "./pages/TermsOfService";
 import PrivacyPolicy from "./pages/PrivacyPolicies";
+import AmlPolicy from "./pages/AmlPolicy";
+import Disclaimer from "./pages/Disclaimer";
+import RiskDisclosure from "./pages/RiskDisclosure";
 
 
 function App() {
@@ -26,6 +29,9 @@ function App() {
         <Route path="/career" element={<Career />} />
         <Route path="/termsofservices" element={<TermsOfService />} />
         <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/amlpolicy" element={<AmlPolicy />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/riskdisclosure" element={<RiskDisclosure />} />
       </Routes>
 
       <Footer />
