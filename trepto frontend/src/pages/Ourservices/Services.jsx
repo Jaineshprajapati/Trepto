@@ -1,23 +1,35 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
 import PageHeader from "../../components/common/PageHeader/PageHeader";
 import Dealrevelution from "./components/Dear&evelution";
 import Investment from "./components/Investment.jsx";
 import ServicesSection from "./components/Services";
 import Stategicadvisory from "./components/Stategicadvisory";
 import Technologydatasystem from "./components/Technologydatasystem";
+import Tradefinanceservices from "./components/Tradefinanceservice.jsx";
+
 import CommonCTA from "../../components/common/CTA/CommonCTA.jsx";
 import ctaBg from "../../assets/images/CTA.png";
 
 import Reveal from "../../components/common/Reveal";
 import RevealGroup from "../../components/common/RevealGroup";
-import Tradefinanceservices from "./components/Tradefinanceservice.jsx";
 
 const Ourservices = () => {
   const navigate = useNavigate();
 
   return (
     <>
+      {/* SEO */}
+      <Helmet>
+        <title>Services | TRePTO Strategic & Trading Solutions</title>
+        <meta
+          name="description"
+          content="Explore TRePTO’s research services, trading frameworks, deal evaluation, technology data systems, and strategic advisory solutions."
+        />
+      </Helmet>
+
+      {/* Page Header */}
       <PageHeader title="Our Services" />
 
       <RevealGroup as={React.Fragment}>
@@ -40,17 +52,18 @@ const Ourservices = () => {
         <Reveal direction="up" delay={0.42}>
           <Stategicadvisory />
         </Reveal>
+
         <Reveal direction="up" delay={0.50}>
-        <Tradefinanceservices />
+          <Tradefinanceservices />
         </Reveal>
       </RevealGroup>
 
       <CommonCTA
         title="Check About Us"
         subtitle="Speak with our team about research, trading frameworks, or strategic advisory."
-        buttonText="Aboout our journey"
+        buttonText="About our journey"
         backgroundImage={ctaBg}
-        onButtonClick={() => navigate("/about")}
+        onButtonClick={() => (window.location.href = "/about")}
       />
     </>
   );

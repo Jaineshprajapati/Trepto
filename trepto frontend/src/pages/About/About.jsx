@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
 import PageHeader from "../../components/common/PageHeader/PageHeader";
 import AboutOne from "./components/Aboutone/Aboutone";
 import Whychooseus from "./components/Whychooseus/Whychooseus";
@@ -26,6 +27,15 @@ const About = () => {
 
   return (
     <>
+      {/* SEO */}
+      <Helmet>
+        <title>About TRePTO | Research-First Trading & Advisory Firm</title>
+        <meta
+          name="description"
+          content="Learn about TRePTO’s mission, philosophy, and research-first approach to trading frameworks and strategic advisory."
+        />
+      </Helmet>
+
       {/* About Page Header */}
       <PageHeader title="About Us" />
 
