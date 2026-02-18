@@ -84,18 +84,32 @@ const Footer = () => {
             <h4 className="mb-4 text-xs font-medium uppercase tracking-widest text-white/60">
               Social
             </h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-sm mb-4">
               {socialLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
                     className="text-white/80 transition hover:text-orange-500"
+                    target={link.target}
+                    rel={link.rel}
                   >
                     {link.name}
                   </a>
                 </li>
               ))}
             </ul>
+            {/* Email Us below Instagram */}
+            <div className="pt-2">
+              <h4 className="mb-1 text-xs font-medium uppercase tracking-widest text-white/60">
+                Email us
+              </h4>
+              <a
+                href="mailto:info@trepto.in"
+                className="text-white/80 transition hover:text-orange-500 text-sm"
+              >
+                info@trepto.in
+              </a>
+            </div>
           </div>
         </div>
 
