@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 import PageHeader from "../../components/common/PageHeader/PageHeader";
 import Joinourteam from "./components/JoinOurTeam/JoinOurTeam";
@@ -18,13 +19,22 @@ const Career = () => {
       if (element) {
         setTimeout(() => {
           element.scrollIntoView({ behavior: "smooth" });
-        }, 300); // delay to allow Reveal animation render
+        }, 300);
       }
     }
   }, [location]);
 
   return (
     <>
+      {/* SEO */}
+      <Helmet>
+        <title>Careers at TRePTO | Join Our Research & Advisory Team</title>
+        <meta
+          name="description"
+          content="Explore career opportunities at TRePTO. Join our research-driven team working on trading frameworks, market intelligence, and strategic advisory."
+        />
+      </Helmet>
+
       <PageHeader title="Career" />
 
       <Reveal>

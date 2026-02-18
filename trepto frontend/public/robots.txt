@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trepto.in/sitemap.xml
