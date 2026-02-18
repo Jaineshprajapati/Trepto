@@ -16,8 +16,6 @@ import Reveal from "../../components/common/Reveal";
 import RevealGroup from "../../components/common/RevealGroup";
 
 const Ourservices = () => {
-  const navigate = useNavigate();
-
   return (
     <>
       {/* SEO */}
@@ -53,7 +51,7 @@ const Ourservices = () => {
           <Stategicadvisory />
         </Reveal>
 
-        <Reveal direction="up" delay={0.50}>
+        <Reveal direction="up" delay={0.5}>
           <Tradefinanceservices />
         </Reveal>
       </RevealGroup>

@@ -15,16 +15,6 @@ import Reveal from "../../components/common/Reveal";
 import RevealGroup from "../../components/common/RevealGroup";
 
 const About = () => {
-  const navigate = useNavigate();
-
-  const handleContactClick = () => {
-    navigate("/career");
-    setTimeout(() => {
-      const el = document.querySelector("#contact");
-      el?.scrollIntoView({ behavior: "smooth" });
-    }, 100);
-  };
-
   return (
     <>
       {/* SEO */}
