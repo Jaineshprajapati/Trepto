@@ -1,12 +1,11 @@
 import React from "react";
-import whoweareimg from "../../../../assets/images/wwa.png"
+import whoweareimg from "../../../../assets/images/wwa.png";
 
 const AboutOne = () => {
   return (
     <section className="w-full bg-background">
       <div className="mx-auto max-w-[1440px] px-4 sm:px-6 md:px-10 lg:px-[60px] py-10 md:py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-14 lg:gap-16 items-center">
-
           {/* Left Image */}
           <div className="flex justify-center">
             <img
@@ -24,9 +23,10 @@ const AboutOne = () => {
             </h2>
 
             <p className="text-base md:text-sub font-normal text-text-secondary leading-snug mb-4 md:mb-6">
-              <span className="font-medium text-text-primary">TRePTO</span> is a proprietary stock trading and financial intelligence
-              company operating at the confluence of advanced research,
-              analytical engineering, and market strategy.
+              <span className="font-medium text-text-primary">TRePTO</span> is a
+              quant based proprietary derivatives trading and financial
+              intelligence company operating at the confluence of advanced
+              research, analytical engineering, and market strategy.
             </p>
 
             <p className="text-base md:text-sub font-normal text-text-secondary leading-snug mb-4 md:mb-6">
@@ -37,10 +37,10 @@ const AboutOne = () => {
             <p className="text-base md:text-sub font-normal text-text-secondary leading-snug">
               Our identity is built on the belief that markets reward clarity,
               discipline, and structured decision making and our work reflects
-              that philosophy through every model, framework and insight we build.
+              that philosophy through every model, framework and insight we
+              build.
             </p>
           </div>
-
         </div>
       </div>
     </section>

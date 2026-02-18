@@ -11,8 +11,11 @@ const navLinks = [
 ];
 
 const legalLinks = [
-  { name: "Terms of Use", to: "#" },
-  { name: "Privacy Policy", to: "#" },
+  { name: "Terms of Service", href: "/termsofservices" },
+  { name: "Privacy Policy", href: "/privacypolicy" },
+  { name: "Aml Policy", href: "/amlpolicy" },
+  { name: "Disclaimer", href: "/disclaimer" },
+  { name: "Risk Disclaimer", href: "/riskdisclosure" },
 ];
 
 const socialLinks = [
@@ -28,10 +31,8 @@ const Footer = () => {
   return (
     <footer className="w-full bg-black text-white">
       <div className="mx-auto max-w-[1320px] px-6 py-10">
-
         {/* Top Grid */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-
           {/* Brand */}
           <div className="space-y-5">
             <img src={logo} alt="TrePTO Logo" className="w-36" />
@@ -84,7 +85,7 @@ const Footer = () => {
             <h4 className="mb-4 text-xs font-medium uppercase tracking-widest text-white/60">
               Social
             </h4>
-            <ul className="space-y-3 text-sm">
+            <ul className="space-y-3 text-sm mb-4">
               {socialLinks.map((link) => (
                 <li key={link.name}>
                   <a
@@ -92,14 +93,27 @@ const Footer = () => {
                     target={link.target}
                     rel={link.rel}
                     className="text-white/80 transition hover:text-orange-500"
+                    target={link.target}
+                    rel={link.rel}
                   >
                     {link.name}
                   </a>
                 </li>
               ))}
             </ul>
+            {/* Email Us below Instagram */}
+            <div className="pt-2">
+              <h4 className="mb-1 text-xs font-medium uppercase tracking-widest text-white/60">
+                Email us
+              </h4>
+              <a
+                href="mailto:info@trepto.in"
+                className="text-white/80 transition hover:text-orange-500 text-sm"
+              >
+                info@trepto.in
+              </a>
+            </div>
           </div>
-
         </div>
 
         {/* Divider */}
@@ -110,7 +124,6 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} TrePTO. All rights reserved.</p>
           <p>Crafted with expertise and dedication.</p>
         </div>
-
       </div>
     </footer>
   );

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 
@@ -9,6 +9,12 @@ import Ourservices from "./pages/Ourservices/Services";
 import About from "./pages/About/About";
 import Career from "./pages/career/career";
 import ScrollToTop from "./components/common/ScrollToTop";
+import TermsOfService from "./pages/TermsOfService";
+import PrivacyPolicy from "./pages/PrivacyPolicies";
+import AmlPolicy from "./pages/AmlPolicy";
+import Disclaimer from "./pages/Disclaimer";
+import RiskDisclosure from "./pages/RiskDisclosure";
+
 
 
 function App() {
@@ -22,6 +28,11 @@ function App() {
         <Route path="/services" element={<Ourservices />} />
         <Route path="/about" element={<About />} />
         <Route path="/career" element={<Career />} />
+        <Route path="/termsofservices" element={<TermsOfService />} />
+        <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+        <Route path="/amlpolicy" element={<AmlPolicy />} />
+        <Route path="/disclaimer" element={<Disclaimer />} />
+        <Route path="/riskdisclosure" element={<RiskDisclosure />} />
       </Routes>
 
       <Footer />
