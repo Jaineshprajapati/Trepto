@@ -10,9 +10,6 @@ const PrivacyPolicy = () => {
           <h1 className="text-h1 font-heading text-text-primary mb-2">
             Privacy Policy
           </h1>
-          <p className="text-text-secondary text-sm">
-            Last updated: 3 May 2024
-          </p>
         </header>
 
         {/* Content */}

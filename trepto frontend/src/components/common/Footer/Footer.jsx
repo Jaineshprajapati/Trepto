@@ -11,11 +11,11 @@ const navLinks = [
 ];
 
 const legalLinks = [
-  { name: "Terms of Service", href: "/termsofservices" },
-  { name: "Privacy Policy", href: "/privacypolicy" },
-  { name: "Aml Policy", href: "/amlpolicy" },
-  { name: "Disclaimer", href: "/disclaimer" },
-  { name: "Risk Disclaimer", href: "/riskdisclosure" },
+  { name: "Terms of Service", to: "/termsofservices" },
+  { name: "Privacy Policy", to: "/privacypolicy" },
+  { name: "Aml Policy", to: "/amlpolicy" },
+  { name: "Disclaimer", to: "/disclaimer" },
+  { name: "Risk Disclaimer", to: "/riskdisclosure" },
 ];
 
 const socialLinks = [
