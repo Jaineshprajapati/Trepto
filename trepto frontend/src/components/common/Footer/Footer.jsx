@@ -93,8 +93,6 @@ const Footer = () => {
                     target={link.target}
                     rel={link.rel}
                     className="text-white/80 transition hover:text-orange-500"
-                    target={link.target}
-                    rel={link.rel}
                   >
                     {link.name}
                   </a>
