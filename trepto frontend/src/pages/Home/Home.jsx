@@ -5,6 +5,8 @@ import HeroSection from "./components/HeroSection/HeroSection";
 import WhoWeAre from "./components/Whoarewe/whoarewe";
 import TradeFinance from "./components/TradeFinancess/TradeFinance";
 import CollaborateWithUs from "./components/CollaborateWithUs/CollaborateWithUs";
+import MarqueeGallery from "./components/JamboGallery/marqueeGallery";
+
 
 const Home = () => {
   useEffect(() => {
@@ -29,6 +31,7 @@ const Home = () => {
       <HeroSection />
       <WhoWeAre />
       <TradeFinance />
+      <MarqueeGallery />
       <CollaborateWithUs />
     </>
   );

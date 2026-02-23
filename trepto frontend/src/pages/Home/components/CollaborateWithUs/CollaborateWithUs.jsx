@@ -34,7 +34,9 @@ const CollaborateWithUs = () => {
         form.reset();
         toast.success("Thank you! We will contact you shortly.");
       } else {
-        toast.error(result.message || "Something went wrong. Please try again.");
+        toast.error(
+          result.message || "Something went wrong. Please try again.",
+        );
       }
     } catch {
       toast.error("Something went wrong. Please try again.");
@@ -55,12 +57,12 @@ const CollaborateWithUs = () => {
       </div>
 
       <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-
         {/* ================= LEFT : Collaborate Section ================= */}
         <Reveal direction="left">
           <div>
             <h2 className="font-heading text-h2 md:text-h1 text-text-primary leading-tight">
-              Collaborate with Us & <span className="text-primary">Get Funded to Trade Big</span>
+              Collaborate with Us &{" "}
+              <span className="text-primary">Get Funded to Trade Big</span>
             </h2>
 
             <p className="mt-6 text-large text-text-secondary max-w-xl">
@@ -92,9 +94,10 @@ const CollaborateWithUs = () => {
 
             {/* Disclaimer */}
             <p className="mt-10 text-xs text-text-secondary max-w-xl leading-relaxed">
-              Disclaimer: Trepto is a proprietary trading firm and does not provide
-              investment advice, tips, or guaranteed returns. This collaboration
-              opportunity is not a solicitation for any financial product.
+              Disclaimer: Trepto is a proprietary trading firm and does not
+              provide investment advice, tips, or guaranteed returns. This
+              collaboration opportunity is not a solicitation for any financial
+              product.
             </p>
           </div>
         </Reveal>
@@ -103,7 +106,6 @@ const CollaborateWithUs = () => {
         <Reveal direction="right" delay={0.15}>
           <div className="bg-surface border border-border rounded-xl p-8 shadow-sm">
             <form onSubmit={handleSubmit} className="space-y-6">
-              
               {/* Web3Forms Hidden Fields */}
               <input
                 type="hidden"
