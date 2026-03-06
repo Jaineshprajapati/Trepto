@@ -14,6 +14,7 @@ import PrivacyPolicy from "./pages/PrivacyPolicies";
 import AmlPolicy from "./pages/AmlPolicy";
 import Disclaimer from "./pages/Disclaimer";
 import RiskDisclosure from "./pages/RiskDisclosure";
+import NotFound from "./pages/NotFound";
 
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/amlpolicy" element={<AmlPolicy />} />
         <Route path="/disclaimer" element={<Disclaimer />} />
         <Route path="/riskdisclosure" element={<RiskDisclosure />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
 
       <Footer />
